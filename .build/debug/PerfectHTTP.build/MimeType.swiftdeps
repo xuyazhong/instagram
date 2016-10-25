@@ -9,23 +9,23 @@ provides-member:
 - ["V11PerfectHTTP8MimeType", ""]
 - ["OV11PerfectHTTP8MimeType7TopType", ""]
 depends-top-level:
-- !private "??"
-- "Dictionary"
 - !private ">"
 - !private "defaultSubType"
+- "ExpressibleByStringLiteral"
+- !private "FloatLiteralType"
+- !private "IntegerLiteralType"
+- !private "??"
+- "String"
+- !private "ExtendedGraphemeClusterType"
+- !private "UnicodeScalarType"
+- "Dictionary"
+- "MimeType"
 - "StringLiteralType"
 - "AssignmentPrecedence"
-- !private "ExtendedGraphemeClusterType"
 - !private "~="
-- !private "IntegerLiteralType"
-- "String"
 - "CustomStringConvertible"
 - "mimeMap"
 - !private "defaultTopType"
-- "MimeType"
-- "ExpressibleByStringLiteral"
-- !private "UnicodeScalarType"
-- !private "FloatLiteralType"
 depends-member:
 - !private ["Vs11AnyIterator", "Element"]
 - !private ["Vs11AnySequence", "Iterator"]

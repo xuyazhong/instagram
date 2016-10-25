@@ -7,14 +7,14 @@ provides-nominal:
 provides-member:
 - ["O11PerfectHTTP10HTTPMethod", ""]
 depends-top-level:
-- "HTTPMethod"
-- "=="
-- !private "~="
-- !private "StringLiteralType"
-- "Bool"
-- "CustomStringConvertible"
 - "Hashable"
 - "Int"
+- "=="
+- !private "~="
+- "HTTPMethod"
+- "CustomStringConvertible"
+- "Bool"
+- !private "StringLiteralType"
 - "String"
 depends-member:
 - !private ["Sb", "_getBuiltinLogicValue"]

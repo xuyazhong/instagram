@@ -7,15 +7,15 @@ provides-member:
 - ["V10PerfectLib13PerfectServer", ""]
 depends-top-level:
 - !private "FloatLiteralType"
+- !private "IntegerLiteralType"
 - !private "setgid"
 - "PerfectServer"
-- !private "IntegerLiteralType"
+- !private "getpwnam"
+- !private "ThrowSystemError"
+- !private "=="
 - "String"
 - !private "StringLiteralType"
-- !private "getpwnam"
-- !private "=="
 - !private "setuid"
-- !private "ThrowSystemError"
 depends-member:
 - !private ["Sb", "_getBuiltinLogicValue"]
 - ["Sb", "deinit"]

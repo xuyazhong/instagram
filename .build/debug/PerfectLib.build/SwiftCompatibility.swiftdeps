@@ -5,16 +5,16 @@ provides-member:
 - ["SS", ""]
 - ["SS", "range"]
 depends-top-level:
-- "Range"
-- !private "&&"
+- "TernaryPrecedence"
+- !private "!="
 - "String"
 - !private "=="
-- "AssignmentPrecedence"
-- !private "..<"
-- "TernaryPrecedence"
-- "BooleanLiteralType"
-- !private "!="
 - "Bool"
+- "AssignmentPrecedence"
+- "BooleanLiteralType"
+- !private "..<"
+- !private "&&"
+- "Range"
 depends-member:
 - !private ["Sb", "_getBuiltinLogicValue"]
 - ["Sb", "deinit"]

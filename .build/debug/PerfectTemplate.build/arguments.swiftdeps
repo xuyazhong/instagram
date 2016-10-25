@@ -4,25 +4,25 @@ provides-top-level:
 provides-nominal:
 provides-member:
 depends-top-level:
-- !private "!="
+- !private "CommandLine"
 - !private "??"
-- !private "Dictionary"
-- !private "String"
-- "IntegerLiteralType"
-- "HTTPServer"
-- "configureServer"
-- "FloatLiteralType"
-- !private "File"
-- !private "!"
+- !private "print"
+- !private "!="
 - "AssignmentPrecedence"
 - !private "=="
-- !private "exit"
-- !private ">"
 - !private "||"
-- !private "print"
 - !private "StringLiteralType"
+- !private "String"
+- !private "Dictionary"
+- !private ">"
+- !private "!"
+- !private "File"
 - !private "UInt16"
-- !private "CommandLine"
+- !private "exit"
+- "FloatLiteralType"
+- "configureServer"
+- "HTTPServer"
+- "IntegerLiteralType"
 depends-member:
 - !private ["Ps9AnyObject", "documentRoot"]
 - !private ["Ps9AnyObject", "exists"]

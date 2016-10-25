@@ -30,7 +30,7 @@ let testUser = "root"
 // PLEASE change to whatever your actual password is before running these tests
 let testPassword = "chinaren"
 let testSchema = "instagram"
-func fetchData(success:(([String:String])->Void), failed:((String)->Void)) {
+func fetchData(success:(([String])->Void), failed:((String)->Void)) {
 
     var result = ""
     let dataMysql = MySQL() // 创建一个MySQL连接实例
@@ -49,7 +49,7 @@ func fetchData(success:(([String:String])->Void), failed:((String)->Void)) {
         dataMysql.close() //这个延后操作能够保证在程序结束时无论什么结果都会自动关闭数据库连接
     }
     
-    let querySuccess = mysql.query(statement: "SELECT name, passwd FROM user")
+    let querySuccess = dataMysql.query(statement: "SELECT name, passwd FROM user")
     // 确保查询完成
     guard querySuccess else {
         failed("query failed")
@@ -59,16 +59,19 @@ func fetchData(success:(([String:String])->Void), failed:((String)->Void)) {
     // 在当前会话过程中保存查询结果
     let results = dataMysql.storeResults()! //因为上一步已经验证查询是成功的，因此这里我们认为结果记录集可以强制转换为期望的数据结果。当然您如果需要也可以用if-let来调整这一段代码。
     
-    var ary = [[String:String]]() //创建一个字典数组用于存储结果
+    var ary = [String]() //创建一个字典数组用于存储结果
     
     results.forEachRow { row in
-        let optionName = getRowString(forRow: row[0]) //保存选项表的Name名称字段，应该是所在行的第一列，所以是row[0].
-        let optionPasswd = getRowString(forRow: row[1]) //保存选项表Value字段
+        var rest = "<br/>"
+        if let name = row[0] {
+            rest += name
+        } 
+        if let passwd = row[1] {
+            rest += "====="+passwd
+        }
         
-        
-        ary.append(["\(optionName)":"\(optionPasswd)"]) //保存到字典内
+        ary.append(rest) //保存到字典内
     }
-    
     
     success(ary)
 }
