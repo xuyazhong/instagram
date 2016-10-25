@@ -1,0 +1,6 @@
+version: "Swift version 3.0 (swift-3.0-RELEASE)"
+options: "323fbf9d88c624e0802b00d6e4a031a1"
+build_time: [530700479, 864004000]
+inputs:
+  "/var/PerfectTemplate/Packages/PerfectThread-2.0.1/Sources/Threading.swift": [528808043, 0]
+  "/var/PerfectTemplate/Packages/PerfectThread-2.0.1/Sources/ThreadQueue.swift": [528808043, 0]

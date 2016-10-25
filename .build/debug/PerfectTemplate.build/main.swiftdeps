@@ -1,0 +1,235 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "server"
+- "testHost"
+- "testUser"
+- "testPassword"
+- "testSchema"
+- "fetchData"
+- "routes"
+- "api1Routes"
+- "api2Routes"
+provides-nominal:
+provides-member:
+depends-top-level:
+- "fetchData"
+- !private "MySQL"
+- "testUser"
+- "server"
+- "HTTPServer"
+- "configureServer"
+- "testPassword"
+- "print"
+- "testHost"
+- "FloatLiteralType"
+- "Routes"
+- "testSchema"
+- "api1Routes"
+- "IntegerLiteralType"
+- "UnicodeScalarType"
+- "AssignmentPrecedence"
+- "PerfectError"
+- "routes"
+- "StringLiteralType"
+- !private "Log"
+- "api2Routes"
+- "String"
+depends-member:
+- ["Ps9AnyObject", "addRoutes"]
+- !private ["Ps9AnyObject", "close"]
+- !private ["Ps9AnyObject", "connect"]
+- ["Ps9AnyObject", "documentRoot"]
+- !private ["Ps9AnyObject", "errorCode"]
+- !private ["Ps9AnyObject", "errorMessage"]
+- ["Ps9AnyObject", "init"]
+- !private ["Ps9AnyObject", "selectDatabase"]
+- ["Ps9AnyObject", "serverPort"]
+- !private ["Ps9AnyObject", "serverVersion"]
+- ["Ps9AnyObject", "start"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- ["Sb", "deinit"]
+- ["Vs9Character", "deinit"]
+- ["Ps10Comparable", "init"]
+- ["Ps28CustomDebugStringConvertible", "init"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "_getBuiltinLogicValue"]
+- ["Ps29CustomPlaygroundQuickLookable", "init"]
+- !private ["Ps17CustomReflectable", "_getBuiltinLogicValue"]
+- ["Ps17CustomReflectable", "init"]
+- !private ["Ps23CustomStringConvertible", "_getBuiltinLogicValue"]
+- ["Ps23CustomStringConvertible", "get"]
+- ["Ps23CustomStringConvertible", "init"]
+- ["Sd", "deinit"]
+- !private ["Ps9Equatable", "_getBuiltinLogicValue"]
+- ["Ps9Equatable", "get"]
+- ["Ps9Equatable", "init"]
+- ["Ps5Error", "networkError"]
+- !private ["Ps27ExpressibleByBooleanLiteral", "_getBuiltinLogicValue"]
+- ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "init"]
+- ["Ps32ExpressibleByStringInterpolation", "init"]
+- ["Ps26ExpressibleByStringLiteral", "init"]
+- ["Ps33ExpressibleByUnicodeScalarLiteral", "init"]
+- ["Sf", "deinit"]
+- ["O11PerfectHTTP10HTTPMethod", "deinit"]
+- ["O11PerfectHTTP10HTTPMethod", "get"]
+- ["P11PerfectHTTP12HTTPResponse", "appendBody"]
+- ["P11PerfectHTTP12HTTPResponse", "completed"]
+- ["P11PerfectHTTP12HTTPResponse", "deinit"]
+- ["P11PerfectHTTP12HTTPResponse", "setBody"]
+- ["P11PerfectHTTP12HTTPResponse", "setHeader"]
+- ["C17PerfectHTTPServer10HTTPServer", "addRoutes"]
+- ["C17PerfectHTTPServer10HTTPServer", "deinit"]
+- ["C17PerfectHTTPServer10HTTPServer", "documentRoot"]
+- ["C17PerfectHTTPServer10HTTPServer", "init"]
+- ["C17PerfectHTTPServer10HTTPServer", "serverPort"]
+- ["C17PerfectHTTPServer10HTTPServer", "start"]
+- !private ["Ps8Hashable", "_getBuiltinLogicValue"]
+- ["Ps8Hashable", "get"]
+- ["Ps8Hashable", "init"]
+- ["Si", "deinit"]
+- ["Vs5Int16", "deinit"]
+- ["Vs5Int32", "deinit"]
+- ["Vs5Int64", "deinit"]
+- ["Vs4Int8", "deinit"]
+- !private ["P10PerfectLib15JSONConvertible", "_getBuiltinLogicValue"]
+- ["P10PerfectLib15JSONConvertible", "init"]
+- !private ["V10PerfectLib3Log", "info"]
+- !private ["Ps25LosslessStringConvertible", "_getBuiltinLogicValue"]
+- ["Ps25LosslessStringConvertible", "init"]
+- ["Ps10MirrorPath", "init"]
+- !private ["C5MySQL5MySQL", "close"]
+- !private ["C5MySQL5MySQL", "connect"]
+- ["C5MySQL5MySQL", "deinit"]
+- !private ["C5MySQL5MySQL", "errorCode"]
+- !private ["C5MySQL5MySQL", "errorMessage"]
+- !private ["C5MySQL5MySQL", "init"]
+- !private ["C5MySQL5MySQL", "selectDatabase"]
+- !private ["C5MySQL5MySQL", "serverVersion"]
+- ["OO11PerfectHTTP18HTTPResponseHeader4Name", "contentType"]
+- ["OO11PerfectHTTP18HTTPResponseHeader4Name", "deinit"]
+- ["O10PerfectLib12PerfectError", "networkError"]
+- ["V11PerfectHTTP6Routes", "add"]
+- ["V11PerfectHTTP6Routes", "deinit"]
+- ["V11PerfectHTTP6Routes", "init"]
+- ["SS", "deinit"]
+- ["SS", "init"]
+- ["Ps16TextOutputStream", "init"]
+- ["Ps20TextOutputStreamable", "init"]
+- ["Su", "deinit"]
+- ["Vs6UInt16", "deinit"]
+- ["Vs6UInt32", "deinit"]
+- ["Vs6UInt64", "deinit"]
+- ["Vs5UInt8", "deinit"]
+- ["Sc", "deinit"]
+- !private ["P10Foundation12_CFBridgable", "_getBuiltinLogicValue"]
+- ["P10Foundation12_CFBridgable", "init"]
+- !private ["Ps35_ExpressibleByBuiltinBooleanLiteral", "_getBuiltinLogicValue"]
+- ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "init"]
+- ["Ps34_ExpressibleByBuiltinStringLiteral", "init"]
+- ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "init"]
+- ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "init"]
+- !private ["Ps9_Hashable", "_getBuiltinLogicValue"]
+- ["Ps9_Hashable", "get"]
+- ["Ps9_Hashable", "init"]
+- ["P10Foundation12_NSBridgable", "init"]
+- !private ["P10Foundation17_ObjectBridgeable", "_getBuiltinLogicValue"]
+- ["P10Foundation17_ObjectBridgeable", "init"]
+- !private ["P10Foundation21_ObjectTypeBridgeable", "_getBuiltinLogicValue"]
+- ["P10Foundation21_ObjectTypeBridgeable", "init"]
+depends-nominal:
+- "Ps9AnyObject"
+- "Sb"
+- "Vs9Character"
+- "Ps10Comparable"
+- "Ps28CustomDebugStringConvertible"
+- "Ps29CustomPlaygroundQuickLookable"
+- "Ps17CustomReflectable"
+- "Ps23CustomStringConvertible"
+- "Sd"
+- "Ps9Equatable"
+- "Ps5Error"
+- !private "Ps27ExpressibleByBooleanLiteral"
+- "Ps43ExpressibleByExtendedGraphemeClusterLiteral"
+- "Ps32ExpressibleByStringInterpolation"
+- "Ps26ExpressibleByStringLiteral"
+- "Ps33ExpressibleByUnicodeScalarLiteral"
+- "Sf"
+- "O11PerfectHTTP10HTTPMethod"
+- "P11PerfectHTTP12HTTPResponse"
+- "C17PerfectHTTPServer10HTTPServer"
+- "Ps8Hashable"
+- "Si"
+- "Vs5Int16"
+- "Vs5Int32"
+- "Vs5Int64"
+- "Vs4Int8"
+- "P10PerfectLib15JSONConvertible"
+- !private "V10PerfectLib3Log"
+- "Ps25LosslessStringConvertible"
+- "Ps10MirrorPath"
+- "C5MySQL5MySQL"
+- "OO11PerfectHTTP18HTTPResponseHeader4Name"
+- "O10PerfectLib12PerfectError"
+- "V11PerfectHTTP6Routes"
+- "SS"
+- "Ps16TextOutputStream"
+- "Ps20TextOutputStreamable"
+- "Su"
+- "Vs6UInt16"
+- "Vs6UInt32"
+- "Vs6UInt64"
+- "Vs5UInt8"
+- "Sc"
+- "P10Foundation12_CFBridgable"
+- !private "Ps35_ExpressibleByBuiltinBooleanLiteral"
+- "Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral"
+- "Ps34_ExpressibleByBuiltinStringLiteral"
+- "Ps39_ExpressibleByBuiltinUTF16StringLiteral"
+- "Ps41_ExpressibleByBuiltinUnicodeScalarLiteral"
+- "Ps9_Hashable"
+- "P10Foundation12_NSBridgable"
+- "P10Foundation17_ObjectBridgeable"
+- "P10Foundation21_ObjectTypeBridgeable"
+depends-dynamic-lookup:
+depends-external:
+- "/var/swift/usr/lib/swift/linux/x86_64/Swift.swiftmodule"
+- "/var/swift/usr/lib/swift/shims/Visibility.h"
+- "/var/swift/usr/lib/swift/shims/SwiftStdint.h"
+- "/var/swift/usr/lib/swift/shims/UnicodeShims.h"
+- "/var/swift/usr/lib/swift/shims/SwiftStddef.h"
+- "/var/swift/usr/lib/swift/shims/LibcShims.h"
+- "/var/swift/usr/lib/swift/shims/RuntimeStubs.h"
+- "/var/swift/usr/lib/swift/shims/RuntimeShims.h"
+- "/var/swift/usr/lib/swift/shims/RefCount.h"
+- "/var/swift/usr/lib/swift/shims/HeapObject.h"
+- "/var/swift/usr/lib/swift/shims/GlobalObjects.h"
+- "/var/swift/usr/lib/swift/shims/FoundationShims.h"
+- "/var/swift/usr/lib/swift/shims/DispatchShims.h"
+- "/var/swift/usr/lib/swift/shims/CoreFoundationShims.h"
+- "/var/PerfectTemplate/Packages/mysqlclient-2.0.0/module.modulemap"
+- "/var/swift/usr/lib/swift/linux/x86_64/glibc.modulemap"
+- "/var/swift/usr/lib/swift/shims/module.modulemap"
+- "/var/swift/usr/lib/swift/linux/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/var/PerfectTemplate/.build/debug/PerfectHTTPServer.swiftmodule"
+- "/var/PerfectTemplate/Packages/PerfectHTTPServer-2.0.0/Sources/CHTTPParser/include/http_parser.h"
+- "/var/PerfectTemplate/Packages/COpenSSL-2.0.1/COpenSSL/include/module.modulemap"
+- "/var/PerfectTemplate/.build/debug/LinuxBridge.build/module.modulemap"
+- "/var/PerfectTemplate/.build/debug/CHTTPParser.build/module.modulemap"
+- "/var/PerfectTemplate/.build/debug/PerfectHTTP.swiftmodule"
+- "/var/PerfectTemplate/Packages/COpenSSL-2.0.1/COpenSSL/include/openssl.h"
+- "/var/swift/usr/lib/swift/linux/x86_64/Foundation.swiftmodule"
+- "/var/swift/usr/lib/swift/linux/x86_64/Dispatch.swiftmodule"
+- "/var/swift/usr/lib/swift/dispatch/module.modulemap"
+- "/var/swift/usr/lib/swift/linux/x86_64/Glibc.swiftmodule"
+- "/var/PerfectTemplate/Packages/LinuxBridge-2.0.1/LinuxBridge/include/LinuxBridge.h"
+- "/var/PerfectTemplate/.build/debug/PerfectLib.swiftmodule"
+- "/var/PerfectTemplate/.build/debug/PerfectNet.swiftmodule"
+- "/var/PerfectTemplate/.build/debug/PerfectThread.swiftmodule"
+- "/var/PerfectTemplate/.build/debug/MySQL.swiftmodule"
+- "/usr/include/mysql/my_alloc.h"
+- "/usr/include/mysql/typelib.h"
+- "/usr/include/mysql/my_list.h"
+- "/usr/include/mysql/mysql_time.h"
+- "/usr/include/mysql/mysql_com.h"
+- "/usr/include/mysql/mysql_version.h"
+- "/usr/include/mysql/mysql.h"
+interface-hash: "60dcb5ed32774bc11920396d87d965dd"

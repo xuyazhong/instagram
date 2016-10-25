@@ -1,0 +1,17 @@
+{
+  "": {
+    "swift-dependencies": "/var/PerfectTemplate/.build/debug/PerfectTemplate.build/master.swiftdeps"
+  },
+  "/var/PerfectTemplate/Sources/arguments.swift": {
+    "dependencies": "/var/PerfectTemplate/.build/debug/PerfectTemplate.build/arguments.d",
+    "object": "/var/PerfectTemplate/.build/debug/PerfectTemplate.build/arguments.swift.o",
+    "swiftmodule": "/var/PerfectTemplate/.build/debug/PerfectTemplate.build/arguments~partial.swiftmodule",
+    "swift-dependencies": "/var/PerfectTemplate/.build/debug/PerfectTemplate.build/arguments.swiftdeps"
+  },
+  "/var/PerfectTemplate/Sources/main.swift": {
+    "dependencies": "/var/PerfectTemplate/.build/debug/PerfectTemplate.build/main.d",
+    "object": "/var/PerfectTemplate/.build/debug/PerfectTemplate.build/main.swift.o",
+    "swiftmodule": "/var/PerfectTemplate/.build/debug/PerfectTemplate.build/main~partial.swiftmodule",
+    "swift-dependencies": "/var/PerfectTemplate/.build/debug/PerfectTemplate.build/main.swiftdeps"
+  }
+}

@@ -1,0 +1,6 @@
+version: "Swift version 3.0 (swift-3.0-RELEASE)"
+options: "8bc607a5dd024d404cc372dc2027fc11"
+build_time: [530700493, 521194000]
+inputs:
+  "/var/PerfectTemplate/Sources/arguments.swift": [528811291, 0]
+  "/var/PerfectTemplate/Sources/main.swift": [530700477, 0]

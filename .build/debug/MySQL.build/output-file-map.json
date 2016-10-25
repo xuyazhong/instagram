@@ -1,0 +1,11 @@
+{
+  "": {
+    "swift-dependencies": "/var/PerfectTemplate/.build/debug/MySQL.build/master.swiftdeps"
+  },
+  "/var/PerfectTemplate/Packages/MySQL-2.0.3/Sources/MySQL/MySQL.swift": {
+    "dependencies": "/var/PerfectTemplate/.build/debug/MySQL.build/MySQL.d",
+    "object": "/var/PerfectTemplate/.build/debug/MySQL.build/MySQL.swift.o",
+    "swiftmodule": "/var/PerfectTemplate/.build/debug/MySQL.build/MySQL~partial.swiftmodule",
+    "swift-dependencies": "/var/PerfectTemplate/.build/debug/MySQL.build/MySQL.swiftdeps"
+  }
+}

@@ -1,0 +1,9 @@
+version: "Swift version 3.0 (swift-3.0-RELEASE)"
+options: "8e206f49b549ab81fcea391288a199f6"
+build_time: [530700490, 560127000]
+inputs:
+  "/var/PerfectTemplate/Packages/PerfectHTTPServer-2.0.0/Sources/PerfectHTTPServer/HTTP11Response.swift": [528807511, 0]
+  "/var/PerfectTemplate/Packages/PerfectHTTPServer-2.0.0/Sources/PerfectHTTPServer/HTTP2.swift": [528807511, 0]
+  "/var/PerfectTemplate/Packages/PerfectHTTPServer-2.0.0/Sources/PerfectHTTPServer/HPACK.swift": [528807511, 0]
+  "/var/PerfectTemplate/Packages/PerfectHTTPServer-2.0.0/Sources/PerfectHTTPServer/HTTP11Request.swift": [528807511, 0]
+  "/var/PerfectTemplate/Packages/PerfectHTTPServer-2.0.0/Sources/PerfectHTTPServer/HTTPServer.swift": [528807511, 0]
