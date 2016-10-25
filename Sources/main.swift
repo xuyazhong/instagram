@@ -59,18 +59,18 @@ func fetchData(success:(([String])->Void), failed:((String)->Void)) {
     // 在当前会话过程中保存查询结果
     let results = dataMysql.storeResults()! //因为上一步已经验证查询是成功的，因此这里我们认为结果记录集可以强制转换为期望的数据结果。当然您如果需要也可以用if-let来调整这一段代码。
     
-    var ary = [String]() //创建一个字典数组用于存储结果
+    var ary = [String]()
     
     results.forEachRow { row in
-        var rest = ""
+        var rest = "{"
         if let name = row[0] {
-            rest += name
+            rest += "\"name\":\"" + name + "\","
         } 
         if let passwd = row[1] {
-            rest += "====="+passwd
+            rest += "\"passwd\":\"" + passwd + "\"}"
         }
         
-        ary.append(rest) //保存到字典内
+        ary.append(rest)
     }
     
     success(ary)
@@ -81,6 +81,18 @@ func fetchData(success:(([String])->Void), failed:((String)->Void)) {
 var routes = Routes()
 routes.add(method: .get, uri: "/", handler: {
     request, response in
+    fetchData(success:({array in
+        response.setHeader(.contentType, value: "text/json")
+        let arr = array.map {
+            $0
+        }
+        response.setBody(string: "\(rest)")
+        response.completed()
+    }), failed:({msg in
+        response.setHeader(.contentType, value: "text/json")
+        response.appendBody(string:"{\"code\":\"500\",\"msg\":\"failed\",\"data\":{\"errorCode\":\"123\"}}")
+        response.completed()
+    }))
     response.setHeader(.contentType, value: "text/html")
     response.appendBody(string: "<html><title>Hello, world!</title><body>Hello, world!</body></html>")
     response.completed()
@@ -98,21 +110,9 @@ api1Routes.add(method: .get, uri: "/api/v1", handler: {
 
 var api2Routes = Routes()
 api2Routes.add(method: .get, uri: "/call2", handler: { request, response in
-
-    fetchData(success:({array in
-        response.setHeader(.contentType, value: "text/html")
-        let arr = array.map {
-            "<h2>" + $0 + "</h2>"
-        }
-        let rest = arr.joined(separator: "<br>")
-        response.setBody(string: "程序接口API版本v2已经调用第二种方法\(rest)")
-        response.completed()
-    }), failed:({msg in
-        response.setHeader(.contentType, value: "text/html")
-        response.setBody(string: "程序接口API版本v2已经调用第二种方法\(msg)")
-        response.completed()
-    }))
-    
+    response.setHeader(.contentType, value: "text/html")
+    response.setBody(string: "程序接口API版本v2已经调用第二种方法")
+    response.completed()
 })
 // Add the routes to the server.
 server.addRoutes(routes)
