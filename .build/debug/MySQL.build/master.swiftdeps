@@ -1,5 +1,0 @@
-version: "Swift version 3.0 (swift-3.0-RELEASE)"
-options: "343acafdd62017aa17d610006124cc20"
-build_time: [530698910, 217277000]
-inputs:
-  "/var/PerfectTemplate/Packages/MySQL-2.0.3/Sources/MySQL/MySQL.swift": [530694034, 0]

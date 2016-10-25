@@ -104,7 +104,7 @@ api2Routes.add(method: .get, uri: "/call2", handler: { request, response in
         let arr = array.map {
             "<h2>" + $0 + "</h2>"
         }
-        let rest = arr.joinWithSeparator("<br>")
+        let rest = arr.joined(separator: "<br>")
         response.setBody(string: "程序接口API版本v2已经调用第二种方法\(rest)")
         response.completed()
     }), failed:({msg in

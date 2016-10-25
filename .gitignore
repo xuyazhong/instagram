@@ -63,3 +63,5 @@ xcuserdata
 Fishtrip.xcscmblueprint
 Packages
 Packages/*
+.build/*
+.build
