@@ -29,58 +29,81 @@ let testHost = "127.0.0.1"
 let testUser = "root"
 // PLEASE change to whatever your actual password is before running these tests
 let testPassword = "chinaren"
-let testSchema = "test"
-func fetchData() -> String {
+let testSchema = "instagram"
+func fetchData(success:(([String:String])->Void), failed:((String)->Void)) {
 
-            var result = ""
-            let dataMysql = MySQL() // 创建一个MySQL连接实例
-
-            let connected = dataMysql.connect(host: testHost, user: testUser, password: testPassword)
-
-            guard connected else {
-                // 验证一下连接是否成功
-                print(dataMysql.errorMessage())
-                result = dataMysql.errorMessage()
-                return result
-            }
-
-            defer {
-                dataMysql.close() //这个延后操作能够保证在程序结束时无论什么结果都会自动关闭数据库连接
-            }
-
-            // 选择具体的数据Schema
-            guard dataMysql.selectDatabase(named: testSchema) else {
-                result = "数据库选择失败。错误代码：\(dataMysql.errorCode())       错误解释：\(dataMysql.errorMessage())"
-                    Log.info(message: result)
-                    return result
-            }
-            return "\(dataMysql.serverVersion())"
-        }
+    var result = ""
+    let dataMysql = MySQL() // 创建一个MySQL连接实例
+    
+    let connected = dataMysql.connect(host: testHost, user: testUser, password: testPassword, db: testSchema)
+    
+    guard connected else {
+        // 验证一下连接是否成功
+        print(dataMysql.errorMessage())
+        result = dataMysql.errorMessage()
+        failed(result)
+        return
+    }
+    
+    defer {
+        dataMysql.close() //这个延后操作能够保证在程序结束时无论什么结果都会自动关闭数据库连接
+    }
+    
+    let querySuccess = mysql.query(statement: "SELECT name, passwd FROM user")
+    // 确保查询完成
+    guard querySuccess else {
+        failed("query failed")
+        return
+    }
+    
+    // 在当前会话过程中保存查询结果
+    let results = dataMysql.storeResults()! //因为上一步已经验证查询是成功的，因此这里我们认为结果记录集可以强制转换为期望的数据结果。当然您如果需要也可以用if-let来调整这一段代码。
+    
+    var ary = [[String:String]]() //创建一个字典数组用于存储结果
+    
+    results.forEachRow { row in
+        let optionName = getRowString(forRow: row[0]) //保存选项表的Name名称字段，应该是所在行的第一列，所以是row[0].
+        let optionPasswd = getRowString(forRow: row[1]) //保存选项表Value字段
+        
+        
+        ary.append(["\(optionName)":"\(optionPasswd)"]) //保存到字典内
+    }
+    
+    
+    success(ary)
+}
 
 // Register your own routes and handlers
 
 var routes = Routes()
 routes.add(method: .get, uri: "/", handler: {
-		request, response in
-		response.setHeader(.contentType, value: "text/html")
-		response.appendBody(string: "<html><title>Hello, world!</title><body>Hello, world!</body></html>")
-		response.completed()
-	}
+    request, response in
+    response.setHeader(.contentType, value: "text/html")
+    response.appendBody(string: "<html><title>Hello, world!</title><body>Hello, world!</body></html>")
+    response.completed()
+    }
 )
 
 var api1Routes = Routes()
 api1Routes.add(method: .get, uri: "/api/v1", handler: {
-		request, response in
-		response.setHeader(.contentType, value: "text/json")
-		response.appendBody(string:"{\"code\":\"0\",\"msg\":\"create house success\",\"data\":{\"house_id\":34358}}")
-		response.completed()
-	}
+    request, response in
+    response.setHeader(.contentType, value: "text/json")
+    response.appendBody(string:"{\"code\":\"0\",\"msg\":\"create house success\",\"data\":{\"house_id\":34358}}")
+    response.completed()
+    }
 )
+
 var api2Routes = Routes()
 api2Routes.add(method: .get, uri: "/call2", handler: { request, response in
-    let rest = fetchData()
-    response.setBody(string: "程序接口API版本v2已经调用第二种方法\(rest)")
-    response.completed()
+
+    fetchData(success:({array in
+        response.setBody(string: "程序接口API版本v2已经调用第二种方法\(array)")
+        response.completed()
+    }), failed:({msg in
+        response.setBody(string: "程序接口API版本v2已经调用第二种方法\(msg)")
+        response.completed()
+    }))
+    
 })
 // Add the routes to the server.
 server.addRoutes(routes)
@@ -100,8 +123,8 @@ server.documentRoot = "./webroot"
 configureServer(server)
 
 do {
-	// Launch the HTTP server.
-	try server.start()
+    // Launch the HTTP server.
+    try server.start()
 } catch PerfectError.networkError(let err, let msg) {
-	print("Network error thrown: \(err) \(msg)")
+    print("Network error thrown: \(err) \(msg)")
 }
