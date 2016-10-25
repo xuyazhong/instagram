@@ -101,7 +101,11 @@ api2Routes.add(method: .get, uri: "/call2", handler: { request, response in
 
     fetchData(success:({array in
         response.setHeader(.contentType, value: "text/html")
-        response.setBody(string: "程序接口API版本v2已经调用第二种方法\(array)")
+        let arr = array.map {
+            "<h2>" + $0 + "</h2>"
+        }
+        let rest = arr.joinWithSeparator("<br>")
+        response.setBody(string: "程序接口API版本v2已经调用第二种方法\(rest)")
         response.completed()
     }), failed:({msg in
         response.setHeader(.contentType, value: "text/html")
