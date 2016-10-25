@@ -62,7 +62,7 @@ func fetchData(success:(([String])->Void), failed:((String)->Void)) {
     var ary = [String]() //创建一个字典数组用于存储结果
     
     results.forEachRow { row in
-        var rest = "<br/>"
+        var rest = ""
         if let name = row[0] {
             rest += name
         } 
@@ -100,9 +100,11 @@ var api2Routes = Routes()
 api2Routes.add(method: .get, uri: "/call2", handler: { request, response in
 
     fetchData(success:({array in
+        response.setHeader(.contentType, value: "text/html")
         response.setBody(string: "程序接口API版本v2已经调用第二种方法\(array)")
         response.completed()
     }), failed:({msg in
+        response.setHeader(.contentType, value: "text/html")
         response.setBody(string: "程序接口API版本v2已经调用第二种方法\(msg)")
         response.completed()
     }))
